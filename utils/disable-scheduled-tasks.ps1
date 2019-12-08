@@ -3,17 +3,17 @@
 
 $tasks = @(
     # Windows base scheduled tasks
-    "\Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319"
-    "\Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319 64"
-    "\Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319 64 Critical"
-    "\Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319 Critical"
+    #"\Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319"
+    #"\Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319 64"
+    #"\Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319 64 Critical"
+    #"\Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319 Critical"
 
     #"\Microsoft\Windows\Active Directory Rights Management Services Client\AD RMS Rights Policy Template Management (Automated)"
     #"\Microsoft\Windows\Active Directory Rights Management Services Client\AD RMS Rights Policy Template Management (Manual)"
 
     #"\Microsoft\Windows\AppID\EDP Policy Manager"
     #"\Microsoft\Windows\AppID\PolicyConverter"
-    "\Microsoft\Windows\AppID\SmartScreenSpecific"
+    #"\Microsoft\Windows\AppID\SmartScreenSpecific"
     #"\Microsoft\Windows\AppID\VerifiedPublisherCertStoreCheck"
 
     "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser"
@@ -42,8 +42,8 @@ $tasks = @(
     "\Microsoft\Windows\CloudExperienceHost\CreateObjectTask"
 
     "\Microsoft\Windows\Customer Experience Improvement Program\Consolidator"
-    "\Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask"
-    "\Microsoft\Windows\Customer Experience Improvement Program\UsbCeip"
+    #"\Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask"
+    #"\Microsoft\Windows\Customer Experience Improvement Program\UsbCeip"
 
     #"\Microsoft\Windows\Data Integrity Scan\Data Integrity Scan"
     #"\Microsoft\Windows\Data Integrity Scan\Data Integrity Scan for Crash Recovery"
@@ -59,7 +59,7 @@ $tasks = @(
 
     #"\Microsoft\Windows\DiskFootprint\Diagnostics"
 
-    "\Microsoft\Windows\Feedback\Siuf\DmClient"
+    #"\Microsoft\Windows\Feedback\Siuf\DmClient"
 
     #"\Microsoft\Windows\File Classification Infrastructure\Property Definition Sync"
 
@@ -74,12 +74,12 @@ $tasks = @(
     #"\Microsoft\Windows\Maintenance\WinSAT"
 
     #"\Microsoft\Windows\Maps\MapsToastTask"
-    #"\Microsoft\Windows\Maps\MapsUpdateTask"
+    "\Microsoft\Windows\Maps\MapsUpdateTask"
 
     #"\Microsoft\Windows\MemoryDiagnostic\ProcessMemoryDiagnosticEvents"
     #"\Microsoft\Windows\MemoryDiagnostic\RunFullMemoryDiagnostic"
 
-    "\Microsoft\Windows\Mobile Broadband Accounts\MNO Metadata Parser"
+    #"\Microsoft\Windows\Mobile Broadband Accounts\MNO Metadata Parser"
 
     #"\Microsoft\Windows\MUI\LPRemove"
 
@@ -162,12 +162,12 @@ $tasks = @(
 
     #"\Microsoft\Windows\WDI\ResolutionHost"
 
-    "\Microsoft\Windows\Windows Defender\Windows Defender Cache Maintenance"
-    "\Microsoft\Windows\Windows Defender\Windows Defender Cleanup"
-    "\Microsoft\Windows\Windows Defender\Windows Defender Scheduled Scan"
-    "\Microsoft\Windows\Windows Defender\Windows Defender Verification"
+    #"\Microsoft\Windows\Windows Defender\Windows Defender Cache Maintenance"
+    #"\Microsoft\Windows\Windows Defender\Windows Defender Cleanup"
+    #"\Microsoft\Windows\Windows Defender\Windows Defender Scheduled Scan"
+    #"\Microsoft\Windows\Windows Defender\Windows Defender Verification"
 
-    "\Microsoft\Windows\Windows Error Reporting\QueueReporting"
+    #"\Microsoft\Windows\Windows Error Reporting\QueueReporting"
 
     #"\Microsoft\Windows\Windows Filtering Platform\BfeOnServiceStartTypeChange"
 

@@ -1,0 +1,39 @@
+complete all the Windows Updates and reboots
+download lenovo vantage app and check that for system updates
+
+see the orig readme to open admin powershell and then Set-ExeuctionPolicy
+inspect each script incase i want to modify what is removed based on normal install or VM install
+run these scripts with .\ prefix from powershell from orig admin account:
+
+remove-onedrive
+remove-default-apps       - may need to run this a few times if errors
+disable-services
+my-registry-tweaks
+disable-scheduled-tasks
+
+restart
+then create limited user account but add it as admin for now
+also download lenovo vantage for this account and configure
+
+run all the scripts above again as limited
+then reboot again
+
+still should go through all pages of the Settings App and check if theres anything else to tweak
+
+turn on bitlocker
+
+then run this script:
+install-basic-software
+
+reboot
+
+remove limited user from admins group
+
+since auto updates are now turned off, we get frequent prompts for windows defender updates
+use this to set up a scheduled task to perform the updates:
+http://www.thewindowsclub.com/update-windows-defender-automatic-windows-updates-disabled
+
+
+
+
+

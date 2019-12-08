@@ -1,6 +1,8 @@
 #   Description:
-# This script removes unwanted Apps that come with Windows. If you  do not want
+# This script removes unwanted Apps that come with Windows. If you do not want
 # to remove certain Apps comment out the corresponding lines below.
+
+# check what apps are installed with:  Get-AppxPackage | Select Name
 
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\take-own.psm1
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\force-mkdir.psm1
@@ -11,8 +13,8 @@ do {} until (Elevate-Privileges SeTakeOwnershipPrivilege)
 Write-Output "Uninstalling default apps"
 $apps = @(
     # default Windows 10 apps
-    "Microsoft.3DBuilder"
-    "Microsoft.Appconnector"
+    #"Microsoft.3DBuilder"
+    #"Microsoft.Appconnector"
     "Microsoft.BingFinance"
     "Microsoft.BingNews"
     "Microsoft.BingSports"
@@ -22,43 +24,43 @@ $apps = @(
     "Microsoft.GamingServices"
     "Microsoft.Microsoft3DViewer"
     "Microsoft.MicrosoftOfficeHub"
-    "Microsoft.MicrosoftPowerBIForWindows"
+    #"Microsoft.MicrosoftPowerBIForWindows"
     "Microsoft.MicrosoftSolitaireCollection"
     #"Microsoft.MicrosoftStickyNotes"
     "Microsoft.MinecraftUWP"
-    "Microsoft.NetworkSpeedTest"
+    #"Microsoft.NetworkSpeedTest"
     "Microsoft.Office.OneNote"
-    #"Microsoft.OneConnect"
+    "Microsoft.OneConnect"              # paid wifi and cellular
     "Microsoft.People"
     "Microsoft.Print3D"
     "Microsoft.SkypeApp"
     "Microsoft.Wallet"
     #"Microsoft.Windows.Photos"
-    "Microsoft.WindowsAlarms"
+    #"Microsoft.WindowsAlarms"
     #"Microsoft.WindowsCalculator"
-    "Microsoft.WindowsCamera"
-    "microsoft.windowscommunicationsapps"
+    #"Microsoft.WindowsCamera"
+    #"microsoft.windowscommunicationsapps"
     "Microsoft.WindowsMaps"
-    "Microsoft.WindowsPhone"
-    "Microsoft.WindowsSoundRecorder"
+    #"Microsoft.WindowsPhone"
+    #"Microsoft.WindowsSoundRecorder"
     #"Microsoft.WindowsStore"   # can't be re-installed
     "Microsoft.Xbox.TCUI"
     "Microsoft.XboxApp"
     "Microsoft.XboxGameOverlay"
     "Microsoft.XboxGamingOverlay"
+    "Microsoft.XboxIdentityProvider"
     "Microsoft.XboxSpeechToTextOverlay"
     "Microsoft.YourPhone"
     "Microsoft.ZuneMusic"
     "Microsoft.ZuneVideo"
 
     # Threshold 2 apps
-    "Microsoft.CommsPhone"
-    "Microsoft.ConnectivityStore"
+    #"Microsoft.CommsPhone"
+    #"Microsoft.ConnectivityStore"
     "Microsoft.GetHelp"
     "Microsoft.Getstarted"
     "Microsoft.Messaging"
     "Microsoft.Office.Sway"
-    "Microsoft.OneConnect"
     "Microsoft.WindowsFeedbackHub"
 
     # Creators Update apps
@@ -108,7 +110,7 @@ $apps = @(
     "Playtika.CaesarsSlotsFreeCasino"
     "ShazamEntertainmentLtd.Shazam"
     "SpotifyAB.SpotifyMusic"
-    #"TheNewYorkTimes.NYTCrossword"
+    "TheNewYorkTimes.NYTCrossword"
     "ThumbmunkeysLtd.PhototasticCollage"
     "TuneIn.TuneInRadio"
     "WinZipComputing.WinZipUniversal"
@@ -125,7 +127,6 @@ $apps = @(
     #"Microsoft.Windows.Cortana"
     #"Microsoft.WindowsFeedback"
     #"Microsoft.XboxGameCallableUI"
-    #"Microsoft.XboxIdentityProvider"
     #"Windows.ContactSupport"
 
     # apps which other apps depend on
@@ -168,6 +169,7 @@ force-mkdir "HKLM:\SOFTWARE\Policies\Microsoft\WindowsStore"
 Set-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\WindowsStore" "AutoDownload" 2
 
 # Prevents "Suggested Applications" returning
+# Prevents "Consumer Experience Applications" from returning
 force-mkdir "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent"
 Set-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" "DisableWindowsConsumerFeatures" 1
 
